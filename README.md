@@ -2,12 +2,12 @@
 
 Collection of unofficial documentation of SketchUp's WebDialog class.
 
-## [Wiki](wiki/)
+## [Wiki](https://github.com/thomthom/sketchup-webdialogs-the-lost-manual/wiki)
 
 Articles describing issues, compatibility and best-practices when dealing
 with the `WebDialog` class.
 
-## [Issues](issues/)
+## [Issues](https://github.com/thomthom/sketchup-webdialogs-the-lost-manual/issues)
 
 The Issues list will contain an organized list of known issues and
 suggestions for improvements.
