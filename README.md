@@ -2,8 +2,8 @@
 
 Collection of unofficial documentation of SketchUp's WebDialog class.
 
-(Currently a work in progress in getting the old manual ported as well
-as adding new unpublished information from the backburner.)
+_(Currently a work in progress in getting the old manual ported as well
+as adding new unpublished information from the backburner.)_
 
 ## [Wiki](https://github.com/thomthom/sketchup-webdialogs-the-lost-manual/wiki)
 
