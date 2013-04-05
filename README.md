@@ -1,13 +1,22 @@
-Sketchup WebDialogs - The Lost Manual
-=====================================
+# Sketchup WebDialogs - The Lost Manual
 
 Collection of unofficial documentation of SketchUp's WebDialog class.
 
-The purpose of this repo is to host the Wiki with information on the
-`WebDialog` class in SketchUp's Ruby API.
+## [Wiki](wiki/)
+
+Articles describing issues, compatibility and best-practices when dealing
+with the `WebDialog` class.
+
+## [Issues](issues/)
 
 The Issues list will contain an organized list of known issues and
 suggestions for improvements.
 
-Examples and snippets will also be added. Please contribute by filing
-issues, fork and push back update.
+## Files
+
+Examples and snippets referenced in the Wiki and Issues list.
+
+## Contribute!
+
+Please contribute back to this repository when you discover or develop
+new pieces of information that's useful for the rest of the community.
