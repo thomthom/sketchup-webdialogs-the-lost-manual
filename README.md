@@ -5,10 +5,6 @@ Collection of unofficial documentation of SketchUp's WebDialog class.
 _(Currently a work in progress in getting the old manual ported as well
 as adding new unpublished information from the backburner.)_
 
-## [Wiki](https://github.com/thomthom/sketchup-webdialogs-the-lost-manual/wiki)
-
-Articles describing issues, compatibility and best-practices when dealing
-with the `WebDialog` class.
 
 ## Cross Platform
 
@@ -179,78 +175,6 @@ If you are using Standard Mode you assign it to the HTML element:
 This is because the effective root element in an HTML document differs from Quicks to Standards Mode.
 
 
-## Paths - WebDialog.set_file vs WebDialog.set_html
-
-When you use .set_file to populate the HTML document, all resources (images,CSS,scripts etc.) will be relative to the file you specify.
-
-But when you use `.set_html`, all resources are relative to a temp file created on the system. So if you need to reference external resources from the HTML, either use absolute paths, or add a `<base>` tag to the `<head>` of the `<html>` - specifying where relative paths should be resolved from:
-
-    <base href="c:/absolute/path/" />
-
-## WebDialog.new
-
-You can specify the arguments as either a comma separated list, or as a single Hash object. Currently the manual is missing information for both of these.
-
-Comma Separated Arguments
-
-* `dialog_title`  The title to be displayed in the webdialog.
-* `scrollable`    true if you want to allow scrollbars, false if you do not want to allow scrollbars.
-* `pref_key`  The registry entry where the location and size of the dialog will be saved. If `preferences_key` is not included, the location and size will not be stored.
-* `width` The width of the webdialog.
-* `height`    The height of the webdialog.
-* `left`  The number of pixels from the left.
-* `top`   The number of pixels from the top.
-* `resizable true` if you want to allow the window to be resize by the user.
-
-### Hash argument
-
-    keys = {
-        :dialog_title => title,
-        :scrollable => false,
-        :preferences_key => 'MyDialog',
-        :height => 300,
-        :width => 400,
-        :left => 200,
-        :top => 200,
-        :resizable => true,
-        :mac_only_use_nswindow => true}
-    @dialog = UI::WebDialog.new(keys)
-
-
-But the hash exposes a new undocumented argument, `:mac_only_use_nswindow`.
-
-
-### Fixed window size
-
-When you specify position and size Sketchup only uses those values the first time you create the dialog. After that it reads the last used values from the registry. That might be want to you want for resizable windows. But maybe not for windows with a fixed size which the user can't resize.
-
-When you develop a plugin you might find that you need to change the size of your fixed size window, but you can't see the effect because Sketchup just reads your last values. In which case you need to delete the registry settings for your Webdialog, or use the .set_size method after you create the fixed size window to ensure the correct size.
-
-And if you do not specify a preference key, Sketchup seem to disregard both size and position.
-
-
-### Scrollbars
-
-The scrollbar argument does not seem to work on PC. In order to disable the scrollbars you must set a CSS property. What HTML to assign this property to depends if your HTML uses Quirks Mode or Standards Mode.
-
-If you're using Quicks Mode you assign it to the BODY element:
-
-    body { overflow: hidden; }
-
-If you are using Standard Mode you assign it to the HTML element:
-
-    html { overflow: hidden; }
-
-This is because the effective root element in an HTML document differs from Quicks to Standards Mode.
-
-
-## Paths - WebDialog.set_file vs WebDialog.set_html
-
-When you use .set_file to populate the HTML document, all resources (images,CSS,scripts etc.) will be relative to the file you specify.
-
-But when you use `.set_html`, all resources are relative to a temp file created on the system. So if you need to reference external resources from the HTML, either use absolute paths, or add a `<base>` tag to the `<head>` of the `<html>` - specifying where relative paths should be resolved from:
-
-    <base href="c:/absolute/path/" />
 
 
 ## [Issues](https://github.com/thomthom/sketchup-webdialogs-the-lost-manual/issues)
@@ -279,3 +203,4 @@ Examples and snippets referenced in the Wiki and Issues list.
 
 Please contribute back to this repository when you discover or develop
 new pieces of information that's useful for the rest of the community.
+
